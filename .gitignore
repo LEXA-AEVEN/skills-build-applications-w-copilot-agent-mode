@@ -1,7 +1,9 @@
 .DS_Store
 
-# Virtual Environment
+# Virtual Environment (root)
 venv
+# Project specific virtual environment
+octofit-tracker/backend/venv/
 
 # octofit tracker app
 # octfit-tracker
@@ -31,3 +33,22 @@ yarn-error.log*
 # Python files
 *.pyc
 __pycache__/
+*$py.class
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Coverage / test artifacts
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Django logs/settings
+*.log
+local_settings.py
+
+# VSCode settings
+.vscode/

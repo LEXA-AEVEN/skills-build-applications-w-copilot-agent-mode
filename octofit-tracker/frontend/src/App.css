@@ -1,0 +1,164 @@
+/* OctoFit Theming */
+:root {
+  --octo-bg: #0d1117;
+  --octo-bg-alt: #161b22;
+  --octo-surface: #1f242c;
+  --octo-border: #30363d;
+  --octo-accent: #58a6ff;
+  --octo-accent-alt: #238636;
+  --octo-danger: #da3633;
+  --octo-warning: #d29922;
+  --octo-text: #c9d1d9;
+  --octo-muted: #8b949e;
+  --octo-link: #58a6ff;
+  --octo-gradient: radial-gradient(circle at top left, #1f6feb, #0d1117 70%);
+}
+
+html, body {
+  background: var(--octo-gradient) fixed;
+  color: var(--octo-text);
+  min-height: 100%;
+}
+
+body {
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  line-height: 1.4;
+}
+
+a, .nav-link {
+  color: var(--octo-link);
+  transition: color .15s ease, background-color .15s ease;
+}
+
+a:hover, .nav-link:hover {
+  color: #79c0ff;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background-color: var(--octo-bg-alt);
+  border-radius: .375rem;
+  color: #fff;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--octo-border);
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+
+.navbar-brand img {
+  height: 34px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
+  margin-right: .5rem;
+}
+
+.navbar-brand span {
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.card {
+  background: var(--octo-surface);
+  border: 1px solid var(--octo-border);
+  border-radius: .75rem;
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(90deg, var(--octo-bg-alt), var(--octo-surface));
+  border-bottom: 1px solid var(--octo-border);
+}
+
+.card-title {
+  color: var(--octo-accent);
+  font-weight: 600;
+}
+
+.table thead th {
+  background: var(--octo-bg-alt);
+  color: var(--octo-text);
+  border-bottom: 2px solid var(--octo-border);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(88,166,255,0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(88,166,255,0.12);
+}
+
+.btn-primary, .btn-outline-primary:hover {
+  background-color: var(--octo-accent);
+  border-color: var(--octo-accent);
+}
+
+.btn-outline-primary {
+  color: var(--octo-accent);
+  border-color: var(--octo-accent);
+}
+
+.btn-outline-secondary {
+  color: var(--octo-muted);
+  border-color: var(--octo-border);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--octo-bg-alt);
+  color: var(--octo-text);
+}
+
+input.form-control, .form-select {
+  background-color: var(--octo-bg-alt);
+  border-color: var(--octo-border);
+  color: var(--octo-text);
+}
+
+input.form-control:focus {
+  background-color: var(--octo-bg-alt);
+  border-color: var(--octo-accent);
+  box-shadow: 0 0 0 .2rem rgba(88,166,255,.25);
+  color: var(--octo-text);
+}
+
+.alert-danger {
+  background-color: var(--octo-danger);
+  border: none;
+  color: #fff;
+}
+
+small.text-muted { color: var(--octo-muted) !important; }
+
+.modal-content {
+  background: var(--octo-surface);
+  border: 1px solid var(--octo-border);
+  color: var(--octo-text);
+}
+
+.dropdown-menu {
+  background: var(--octo-surface);
+  border: 1px solid var(--octo-border);
+}
+
+.dropdown-item { color: var(--octo-text); }
+.dropdown-item:hover { background: var(--octo-bg-alt); }
+
+/* Utility helper */
+.octo-logo-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--octo-text);
+}
+
+/* Legacy spinning logo kept if reused */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo { animation: App-logo-spin infinite 20s linear; }
+}
+@keyframes App-logo-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
