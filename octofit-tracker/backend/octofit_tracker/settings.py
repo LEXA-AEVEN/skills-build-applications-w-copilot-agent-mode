@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,15 @@ SECRET_KEY = 'django-insecure-9)-$m*imof*^4r5b*=u(_m$gqnqsle6nxjxu50@0i7dm(pigo$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+"""Allowed hosts configuration
+We want to support both local development and Codespaces.
+The Codespace public URL pattern is: https://$CODESPACE_NAME-8000.app.github.dev
+We include the host portion ($CODESPACE_NAME-8000.app.github.dev) dynamically if CODESPACE_NAME is set.
+We also allow localhost variants.
+"""
+_codespace_name = os.getenv("CODESPACE_NAME")
+_codespace_host = f"{_codespace_name}-8000.app.github.dev" if _codespace_name else None
+ALLOWED_HOSTS = [h for h in ["localhost", "127.0.0.1", _codespace_host] if h]
 
 
 # Application definition
